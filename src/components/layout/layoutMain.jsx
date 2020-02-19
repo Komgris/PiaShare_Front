@@ -14,8 +14,7 @@ class layoutMain extends Component {
         }
         else{
             this.props.history.push('/register'); 
-        }
-              
+        }        
     }
     render() {
         return (

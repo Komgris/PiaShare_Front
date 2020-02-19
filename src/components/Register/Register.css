@@ -1,0 +1,98 @@
+.main-register{
+    display:flex;
+    direction: row;
+}
+.register-panel{
+    background: #fff;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+}
+.register-side-body{
+    background-color: #fff;
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.register-body{
+    background-color: #F09E00;
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.register-body-panel{
+    width: 50%;
+}
+.input-register-container{
+ text-align: center;
+ border-radius: 5px;
+ border:1px solid #F09E00;
+}
+.register-container{
+    padding: 10px 10px 10px 10px;
+}
+.header-register-container{
+    text-align: center;
+    font-size: 40px;
+}
+.label-register-container{
+    font-size: 20px;
+    font-weight: 100;
+}
+.btn-register-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.btn-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+.btn-cancel-register-footer{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.btn-cancel-register-footer:hover{
+    color: #fff;
+    background-color: #F09E00;
+    border: 1px solid #fff;
+}
+.btn-confirm-register-footer{
+    color: #fff;
+    background-color: #F09E00;
+    border: 1px solid #fff;
+}
+.btn-confirm-register-footer:hover{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.text-register-footer{
+    color: #000000;
+    font-weight: 100;
+}
+.text-footer{
+    display: flex;
+    justify-content: center;
+}
+.link-register-footer{
+    padding-left: 5px;
+    color: #F09E00;
+    cursor: pointer;
+    font-weight: bold;
+}
+.link-register-footer:hover{
+    text-decoration: underline;
+}

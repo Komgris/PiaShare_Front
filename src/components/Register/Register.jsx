@@ -1,5 +1,5 @@
 import React from 'react';
-import './Register.css'
+import '../../App.css';
 
 export default function content() {
     return (
@@ -7,12 +7,12 @@ export default function content() {
             <h2 className="header-register-container">Login</h2>
             <div className="register-container">
                 <label className="label-register-container">username</label>
-                <input type="text" className="input-register-container" style={{ width: '100%' }}></input>
+                <input type="text" className="input-register-container" ></input>
             </div>
             {/* ***************************************************************************************************************** */}
             <div className="register-container">
                 <label className="label-register-container">password</label>
-                <input type="password" className="input-register-container" style={{ width: '100%' }}></input>
+                <input type="password" className="input-register-container" ></input>
             </div>
             {/* ***************************************************************************************************************** */}
             <div className="btn-register-footer">

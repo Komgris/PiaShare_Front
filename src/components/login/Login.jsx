@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css'
+import '../../App.css';
 
 export default function Login() {
     return (
@@ -8,17 +8,17 @@ export default function Login() {
                     <h2 className="header-login-container">Register</h2>
                     <div className ="login-container">           
                         <label className="label-login-container">username</label>                  
-                        <input type="text" className="input-login-container" style={{ width: '100%' }}></input>                 
+                        <input type="text" className="input-login-container"></input>                 
                     </div>
                     {/* ***************************************************************************************************************** */}
                     <div className ="login-container">                  
                         <label className="label-login-container">password</label>           
-                        <input  type="password" className="input-login-container" style={{ width: '100%' }}></input>                 
+                        <input  type="password" className="input-login-container"></input>                 
                     </div>
                     {/* ***************************************************************************************************************** */}
                     <div className ="login-container">                 
                         <label className="label-login-container">confirm password</label>
-                       <input  type="password" className="input-login-container" style={{ width: '100%' }}></input>               
+                       <input  type="password" className="input-login-container"></input>               
                     </div> 
                     {/* ***************************************************************************************************************** */}
                     <div className="btn-login-footer">

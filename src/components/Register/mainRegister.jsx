@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Register from './Register'
-import './Register.css'
+import '../../App.css';
 import Logo from '../../img/Piashare.png'
 
 

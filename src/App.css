@@ -1,0 +1,349 @@
+.background-img-main{
+    background-color: #75D6EB;
+    background-image: url(./img/background-main.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.logo-size{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon-people-up-size{
+    font-size: 45px;
+}
+
+.padding-top-bottom{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.label-bold{
+    font-weight: bold;
+    margin: auto;
+    width: auto;
+}
+.content-btn-choice{
+    font-size: 30px;
+    background-color: #FDFEFE;
+    color: black;
+    border: 3px solid #F09E00;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: 100;
+}
+.content-btn-choice:hover{
+    background-color: #F09E00;
+    color: black;
+}
+.slider-wrapper{
+    font-size: 40px;
+    color:#000 ;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.slider{
+    height: 50px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+.slider div{
+    color: #000;
+    height: 50px;
+    margin-bottom: 50px;
+    padding: 2px 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.slider-text1{
+    font-size: 30px;
+    animation:slide_anim 10s linear infinite;
+}
+.slider-text{
+    font-size: 30px;
+}
+@keyframes slide_anim{
+    0%{
+        margin-top: -300px;
+    }
+    5%{
+        margin-top: -200px;
+    }
+    33%{
+        margin-top: -200px;
+    }
+    38%{
+        margin-top: -100px;
+    }
+    66%{
+        margin-top: -100px;
+    }
+    71%{
+        margin-top: 0px;
+    }
+    100%{
+        margin-top: 0px;
+    }
+
+}
+@media(min-width:600px){
+    .content-paragrah{
+        font-size: 70px;
+        font-weight:'100';
+    }
+}
+@media(max-width:1100px){
+    .content-paragrah{
+        font-size: 50px;
+        font-weight:'100';
+    }
+}
+.login-panel{
+    background: #fff;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+}
+.login-body{
+    background-color: #F09E00;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.login-body-panel{
+    width: 50%;
+}
+.input-login-container{
+ text-align: center;
+ width: 100%;
+ border-radius: 5px;
+ border:1px solid #F09E00;
+}
+.login-container{
+    padding: 10px 10px 10px 10px;
+}
+.header-login-container{
+    text-align: center;
+    font-size: 40px;
+}
+.label-login-container{
+    font-size: 20px;
+    font-weight: 100;
+}
+.btn-login-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.btn-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+.btn-cancel-login-footer{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.btn-cancel-login-footer:hover{
+    color: #fff;
+    background-color: #F09E00;
+}
+.btn-confirm-login-footer{
+    color: #fff;
+    background-color: #F09E00;
+}
+.btn-confirm-login-footer:hover{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.text-login-footer{
+    color: #000000;
+    font-weight: 100;
+}
+.text-footer{
+    display: flex;
+    justify-content: center;
+}
+.link-login-footer{
+    padding-left: 5px;
+    color: #F09E00;
+    cursor: pointer;
+    font-weight: bold;
+}
+.link-login-footer:hover{
+    text-decoration: underline;
+}
+.main-register{
+    display:flex;
+    direction: row;
+}
+.register-panel{
+    background: #fff;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+}
+.register-side-body{
+    background-color: #fff;
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.register-body{
+    background-color: #F09E00;
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.register-body-panel{
+    width: 50%;
+}
+.input-register-container{
+ width: 100%;
+ text-align: center;
+ border-radius: 5px;
+ border:1px solid #F09E00;
+}
+.register-container{
+    padding: 10px 10px 10px 10px;
+}
+.header-register-container{
+    text-align: center;
+    font-size: 40px;
+}
+.label-register-container{
+    font-size: 20px;
+    font-weight: 100;
+}
+.btn-register-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.btn-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+}
+.btn-cancel-register-footer{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.btn-cancel-register-footer:hover{
+    color: #fff;
+    background-color: #F09E00;
+    border: 1px solid #fff;
+}
+.btn-confirm-register-footer{
+    color: #fff;
+    background-color: #F09E00;
+    border: 1px solid #fff;
+}
+.btn-confirm-register-footer:hover{
+    color: #F09E00;
+    background-color: #fff;
+    border: 1px solid #F09E00;
+}
+.text-register-footer{
+    color: #000000;
+    font-weight: 100;
+}
+.text-footer{
+    display: flex;
+    justify-content: center;
+}
+.link-register-footer{
+    padding-left: 5px;
+    color: #F09E00;
+    cursor: pointer;
+    font-weight: bold;
+}
+.link-register-footer:hover{
+    text-decoration: underline;
+}
+.header-flex-grow{
+    flex-grow: 1;
+}
+.navbar-background{
+    background-color: #F09E00;
+}
+.header-font-size{
+    font-size: 1.3em;
+}
+.header-login-btn{
+    color: #F09E00;
+    background-color: #FDFEFE;
+    border: 1px solid #F09E00;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+
+}
+.header-menu-btn{
+    color: #FDFEFE;
+    background-color: #F09E00;
+    border: 1px solid #FDFEFE;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+.header-label{
+    color: #000000;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+.header-logo{
+    width: 3em;
+    height: 3em;
+}
+.padding-background{
+    padding: 100px;
+}
+.label-topic{
+    font-size: 24px;
+}
+.label-topic-lg{
+    font-size: 72px;
+}
+.label-mid-bold{
+    font-weight: 100px;
+}
+.landing-btn-start{
+    font-size: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+    background-color: #FDFEFE;
+    border: 2px solid #F09E00 ;
+    border-radius: 5px;
+}
+.landing-btn-start:hover{
+    background-color: #F09E00;
+}
+
+

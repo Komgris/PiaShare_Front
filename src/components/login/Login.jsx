@@ -1,39 +1,33 @@
 import React,{useState}  from 'react';
 import '../../App.css';
 import {Register} from '../services/AuthServices'
+import { useForm } from "react-hook-form";
 
 export default function Login() {
 
-    const [userName,setUserName] = useState('');
-    const [passWord,setPassWord] = useState('');
-    const [confirmpassWord,setConfirmpassWord] = useState('');
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => console.log(data);
 
-    const onSubmit = e =>{
-        e.preventDefault();
-        const data ={
-            username: userName,
-            password: passWord
-        }
-        let res = Register(data);
-        console.log(res)
-    }
     return (
         <div class="login-panel">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="header-login-container">Register</h2>
                 <div className="login-container">
                     <label className="label-login-container">username</label>
-                    <input type="text" value={userName} onChange={(e)=> setUserName(e.target.value)}  className="input-login-container"></input>
+                    <input type="text" name="username"  className="input-login-container" ref={register({ required: true })} ></input>
+                    {errors.username && <span className="red-label">This field is required</span>}
                 </div>
                 {/* ***************************************************************************************************************** */}
                 <div className="login-container">
                     <label className="label-login-container">password</label>
-                    <input type="password" value={passWord} onChange={(e)=> setPassWord(e.target.value)}  className="input-login-container"></input>
+                    <input type="password" name="password"  className="input-login-container" ref={register({ required: true })} ></input>
+                    {errors.password && <span className="red-label">This field is required</span>}
                 </div>
                 {/* ***************************************************************************************************************** */}
                 <div className="login-container">
                     <label className="label-login-container">confirm password</label>
-                    <input type="password" value={confirmpassWord} onChange={(e)=> setConfirmpassWord(e.target.value)}  className="input-login-container"></input>
+                    <input type="password" name="confirm_password"  className="input-login-container" ref={register({ required: true })}></input>
+                    {errors.confirm_password && <span className="red-label">This field is required</span>}
                 </div>
                 {/* ***************************************************************************************************************** */}
                 <div className="btn-login-footer">

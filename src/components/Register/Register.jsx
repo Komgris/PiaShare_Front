@@ -1,11 +1,24 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import {Login} from '../services/AuthServices'
+import alertify from "alertifyjs";
+import { useHistory } from "react-router-dom";
 import '../../App.css';
 
 export default function Register() {
 
+    const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        delete data.confirm_password;
+        Login(data).then(result => {
+            history.push("/dashboard");
+            alertify.success("Success");
+        }).catch((error) => {
+            console.log(error)
+            alertify.error(error.message);
+        })
+    }
 
     return (
         <div class="register-panel">

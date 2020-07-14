@@ -14,7 +14,6 @@ export default function Login() {
             delete data.confirm_password;
             Register(data).then(result=>{
                 history.push("/dashboard");
-                alertify.success("Success");
             }).catch((error)=>{
                 console.log(error)
                 alertify.error(error.message);

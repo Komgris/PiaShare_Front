@@ -4,8 +4,8 @@ import Constants from '../Constrant/Constrant'
     const baseURL = Constants.HOST;
     const testURL = Constants.HOST_TEST;
 
-    export const Login = async () =>{
-        const result = await axios.get(baseURL+'user/login').then(res=>res.data);
+    export const Login = async (data) =>{
+        const result = await axios.get(baseURL+'user/login',data).then(res=>res.data);
         return result
     }
 

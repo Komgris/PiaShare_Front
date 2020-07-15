@@ -10,8 +10,9 @@ export default function Register() {
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        delete data.confirm_password;
+        console.log(data);
         Login(data).then(result => {
+            console.log(result)
             history.push("/dashboard");
             alertify.success("Success");
         }).catch((error) => {

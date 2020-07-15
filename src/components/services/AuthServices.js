@@ -5,7 +5,7 @@ import Constants from '../Constrant/Constrant'
     const testURL = Constants.HOST_TEST;
 
     export const Login = async (data) =>{
-        const result = await axios.get(baseURL+'user/login',data).then(res=>res.data);
+        const result = await axios.post(baseURL+'user/login',data).then(res=>res.data);
         return result
     }
 

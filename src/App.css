@@ -348,5 +348,19 @@
 .red-label{
     color: red;
 }
+.margin-main-dashboard{
+   margin-top: 20px;
+}
+.card-dashboard-size{
+    width: 100px;
+    height: 180px;
+}
+.card-body-font-size{
+    font-size: 1.1rem;
+}
+.margin-right{
+    margin-right: 10px;
+}
+
 
 

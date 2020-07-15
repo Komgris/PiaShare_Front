@@ -1,18 +1,40 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
+import {Login} from '../services/AuthServices'
+import alertify from "alertifyjs";
+import { useHistory } from "react-router-dom";
 import '../../App.css';
 
-export default function content() {
+export default function Register() {
+
+    const history = useHistory();
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        Login(data).then(result => {
+            console.log(result)
+            history.push("/dashboard");
+            alertify.success("Success");
+        }).catch((error) => {
+            console.log(error)
+            alertify.error(error.message);
+        })
+    }
+
     return (
         <div class="register-panel">
+            <form onSubmit={handleSubmit(onSubmit)}>
             <h2 className="header-register-container">Login</h2>
             <div className="register-container">
                 <label className="label-register-container">username</label>
-                <input type="text" className="input-register-container" ></input>
+                <input name="username" type="text" className="input-register-container"  ref={register({ required: true })}></input>
+                {errors.username && <span className="red-label">This field is required</span>}
             </div>
             {/* ***************************************************************************************************************** */}
             <div className="register-container">
                 <label className="label-register-container">password</label>
-                <input type="password" className="input-register-container" ></input>
+                <input name="password" type="password" className="input-register-container"  ref={register({ required: true })}></input>
+                {errors.password && <span className="red-label">This field is required</span>}
             </div>
             {/* ***************************************************************************************************************** */}
             <div className="btn-register-footer">
@@ -24,6 +46,7 @@ export default function content() {
                 <p className="text-register-footer" >Don’t have any account ? </p>
                 <p className="link-register-footer"> sign up </p>
             </div>
+            </form>
         </div>
     );
 }

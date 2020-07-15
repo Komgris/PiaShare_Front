@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
+import "../node_modules/alertifyjs/build/css/alertify.css";
+import "../node_modules/alertifyjs/build/css/themes/semantic.css";
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

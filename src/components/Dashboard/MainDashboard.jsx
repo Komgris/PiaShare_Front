@@ -19,7 +19,7 @@ export default function MainDashboard() {
             <HeaderDashboard></HeaderDashboard>
             <div className= "margin-main-dashboard">
                 <div class="container">
-                    <div class="row">
+                    <div class="row justify-content-start">
                         <div class="col-md-2.5">
                         <div className="margin-right">
                             <div class="card">

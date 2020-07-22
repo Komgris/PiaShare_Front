@@ -1,3 +1,7 @@
+
+body{
+    font-family: 'Kanit', sans-serif;
+}
 .background-img-main{
     background-color: #75D6EB;
     background-image: url(./img/background-main.png);

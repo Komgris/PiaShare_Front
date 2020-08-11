@@ -1,4 +1,4 @@
-import React,{useState}  from 'react';
+import React from 'react';
 import '../../App.css';
 import {Register} from '../services/AuthServices'
 import { useForm } from "react-hook-form";
@@ -13,7 +13,10 @@ export default function Login() {
         if(data.confirm_password === data.password){
             delete data.confirm_password;
             Register(data).then(result=>{
-                history.push("/dashboard");
+                if(result){
+                    localStorage.setItem('userId', result);
+                    history.push("/dashboard");
+                }
             }).catch((error)=>{
                 console.log(error)
                 alertify.error(error.message);

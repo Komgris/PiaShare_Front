@@ -10,11 +10,12 @@ export default function Register() {
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        console.log(data);
         Login(data).then(result => {
-            console.log(result)
-            history.push("/dashboard");
-            alertify.success("Success");
+            if(result){
+                localStorage.setItem('userId',result)
+                history.push("/dashboard");
+                alertify.success("Success");
+            }
         }).catch((error) => {
             console.log(error)
             alertify.error(error.message);

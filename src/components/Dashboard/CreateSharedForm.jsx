@@ -1,11 +1,16 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import {Create} from '../services/SharedServices'
+
 
 export default function CreateSharedForm() {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        data.owner = localStorage.getItem('userId');
+        Create(data).then(result=>{
+            console.log(result)
+        })
     }
 
     return (
@@ -19,28 +24,34 @@ export default function CreateSharedForm() {
                             <div className="col-sm-12 col-md-6"><label className="label-register-container">เงินต้น :</label></div>
 
                             <div className="col-sm-12 col-md-6">
-                                <input name="roomName" type="text" className="input-register-container" ref={register({ required: true })}></input>
+                                <input name="name" type="text" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.name && <span className="red-label">This field is required</span>}
                             </div>
                             <div className="col-sm-12 col-md-6">
                                 <input name="budget" type="number" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.budget && <span className="red-label">This field is required</span>}
                             </div>
 
                             <div className="col-sm-6"><label className="label-register-container">จำนวนสมาชิก :</label></div>
                             <div className="col-sm-6"><label className="label-register-container">รอบการเปีย :</label></div>
                             <div className="col-sm-6">
-                                <input name="memberAmount" type="number" className="input-register-container" ref={register({ required: true })}></input>
+                                <input name="member" type="number" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.member && <span className="red-label">This field is required</span>}
                             </div>
                             <div className="col-sm-6">
-                                <input name="period" type="text" className="input-register-container" ref={register({ required: true })}></input>
+                                <input name="peroid" type="text" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.peroid && <span className="red-label">This field is required</span>}
                             </div>
 
                             <div className="col-sm-6"><label className="label-register-container">เริ่ม :</label></div>
                             <div className="col-sm-6"><label className="label-register-container">สิ้นสุด :</label></div>
                             <div className="col-sm-6">
-                                <input name="from" type="date" className="input-register-container" ref={register({ required: true })}></input>
+                                <input name="start" type="date" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.start && <span className="red-label">This field is required</span>}
                             </div>
                             <div className="col-sm-6">
-                                <input name="to" type="date" className="input-register-container" ref={register({ required: true })}></input>
+                                <input name="finish" type="date" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.finish && <span className="red-label">This field is required</span>}
                             </div>
                         </div>
                     </div>

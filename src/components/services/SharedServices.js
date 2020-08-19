@@ -7,3 +7,8 @@ import Constants from '../Constrant/Constrant'
         const result = await axios.post(baseURL+'shared/create',data).then(res=>res.data);
         return result
     }
+
+    export const Get = async (id) =>{
+        const result = await axios.get(baseURL+'shared/get/'+id).then(res=>res.data);
+        return result;
+    }

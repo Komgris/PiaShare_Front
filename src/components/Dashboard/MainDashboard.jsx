@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import HeaderDashboard from './HeaderDashboard'
+import HeaderDashboard from './HeaderDashboard';
+import {Get} from '../services/SharedServices';
 
 const useStyles = makeStyles(theme => ({
     cardHeader: {
@@ -11,9 +12,14 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-
 export default function MainDashboard() {
     const classes = useStyles();
+    useEffect(() => {
+        Get(localStorage.getItem('userId')).then(result=>{
+            console.log(result);
+        })
+      });
+    
     return (
         <div>
             <HeaderDashboard></HeaderDashboard>

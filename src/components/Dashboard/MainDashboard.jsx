@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import HeaderDashboard from './HeaderDashboard'
+import HeaderDashboard from './HeaderDashboard';
+import {Get} from '../services/SharedServices';
 
 const useStyles = makeStyles(theme => ({
     cardHeader: {
@@ -11,78 +12,43 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-
 export default function MainDashboard() {
+    const [shareRoom, setshareRoom] = useState([]);
     const classes = useStyles();
+    useEffect(() => {
+        Get(localStorage.getItem('userId')).then(result=>{
+            setshareRoom(result);
+        })
+      });
+    
     return (
         <div>
             <HeaderDashboard></HeaderDashboard>
             <div className= "margin-main-dashboard">
                 <div class="container">
                     <div class="row justify-content-start">
-                        <div class="col-md-2.5">
+                    {
+                        shareRoom.map(x=>
+                            <div class="col-md-2.5">
                         <div className="margin-right">
-                            <div class="card">
+                            <div class="card border-share">
                                 <div class="card-header" className={classes.cardHeader}>
-                                        Featured
+                                        {x.name}
                                 </div>
                                 <div class="card-body card-body-font-size">
-                                    <a className="label-bold">เจ้ามือ :</a> Jennifer<br></br>
-                                    <a className="label-bold">รอบเปียถัดไป :</a> 3 มีนาคม 2563<br></br>
-                                    <a className="label-bold">ดอกเบี้ย+เงินต้น :</a> 20,200 บาท<br></br>
-                                    <a className="label-bold">ยอดส่ง :</a> 150 บาท<br></br>
+                                    <ul>
+                                    <li  className="label-bold">เจ้ามือ : {x.name}</li>
+                                    <li className="label-bold">รอบเปียถัดไป : 3 มีนาคม 2563</li>
+                                    <li className="label-bold">ดอกเบี้ย+เงินต้น : {x.budget}</li>
+                                    <li className="label-bold">ยอดส่ง : 150 บาท</li>
+                                    </ul>
                                 </div>
+                                <button className="btn-footer btn-cancel-login-footer"> เพิ่มเติม </button>
                             </div>
                             </div>
                         </div>
-
-                        <div class="col-md-2.5">
-                            <div className="margin-right">
-                            <div class="card">
-                                <div class="card-header" className={classes.cardHeader}>
-                                    Featured
-                                </div>
-                                <div class="card-body card-body-font-size">
-                                    <a className="label-bold">เจ้ามือ :</a> Jennifer<br></br>
-                                    <a className="label-bold">รอบเปียถัดไป :</a> 3 มีนาคม 2563<br></br>
-                                    <a className="label-bold">ดอกเบี้ย+เงินต้น :</a> 20,200 บาท<br></br>
-                                    <a className="label-bold">ยอดส่ง :</a> 150 บาท<br></br>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2.5">
-                        <div className="margin-right">
-                            <div class="card">
-                                <div class="card-header" className={classes.cardHeader}>
-                                    Featured
-                                </div>
-                                <div class="card-body card-body-font-size">
-                                    <a className="label-bold">เจ้ามือ :</a> Jennifer<br></br>
-                                    <a className="label-bold">รอบเปียถัดไป :</a> 3 มีนาคม 2563<br></br>
-                                    <a className="label-bold">ดอกเบี้ย+เงินต้น :</a> 20,200 บาท<br></br>
-                                    <a className="label-bold">ยอดส่ง :</a> 150 บาท<br></br>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2.5 ">
-                        <div className="margin-right">
-                            <div class="card">
-                                <div class="card-header" className={classes.cardHeader}>
-                                    Featured
-                                </div>
-                                <div class="card-body card-body-font-size">
-                                    <a className="label-bold">เจ้ามือ :</a> Jennifer<br></br>
-                                    <a className="label-bold">รอบเปียถัดไป :</a> 3 มีนาคม 2563<br></br>
-                                    <a className="label-bold">ดอกเบี้ย+เงินต้น :</a> 20,200 บาท<br></br>
-                                    <a className="label-bold">ยอดส่ง :</a> 150 บาท<br></br>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
+                            )
+                    }
                     </div>
                 </div>
             </div>                      

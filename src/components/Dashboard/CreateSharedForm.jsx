@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import {Create} from '../services/SharedServices'
 
 
-export default function CreateSharedForm() {
+export default function CreateSharedForm (props)  {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
@@ -11,6 +11,9 @@ export default function CreateSharedForm() {
         Create(data).then(result=>{
             console.log(result)
         })
+    }
+    const onCancel = ()=>{
+        props.popUpState(false);
     }
 
     return (
@@ -57,7 +60,7 @@ export default function CreateSharedForm() {
                     </div>
                     <div className="btn-login-footer">
                         <button className="btn-footer btn-confirm-login-footer"> confrim</button>
-                        <button className="btn-footer btn-cancel-login-footer"> cancel</button>
+                        <button type="button" className="btn-footer btn-cancel-login-footer" onClick={() => onCancel()}> cancel</button>
                     </div>
                 </form>
             </div>

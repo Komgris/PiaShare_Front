@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import HeaderDashboard from './HeaderDashboard';
 import {Get} from '../services/SharedServices';
@@ -15,11 +15,12 @@ const useStyles = makeStyles(theme => ({
 export default function MainDashboard() {
     const [shareRoom, setshareRoom] = useState([]);
     const classes = useStyles();
-    useEffect(() => {
+    useMemo(() => {
         Get(localStorage.getItem('userId')).then(result=>{
             setshareRoom(result);
         })
-      });
+        
+      },[]);
     
     return (
         <div>

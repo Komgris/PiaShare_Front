@@ -59,7 +59,6 @@ export default function CreateSharedForm (props)  {
                         </div>
                     </div>
                     <div className="btn-login-footer">
-                        <button className="btn-footer btn-confirm-login-footer"> confrim</button>
                         <button type="button" className="btn-footer btn-cancel-login-footer" onClick={() => onCancel()}> cancel</button>
                     </div>
                 </form>

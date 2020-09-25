@@ -12,3 +12,8 @@ import Constants from '../Constrant/Constrant'
         const result = await axios.get(baseURL+'shared/get/'+id).then(res=>res.data);
         return result;
     }
+
+    export const Find = async (keyword) =>{
+        const result = await axios.get(baseURL+'shared/find/'+ keyword).then(res=>res.data);
+        return result;
+    }

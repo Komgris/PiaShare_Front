@@ -9,7 +9,9 @@ export default function CreateSharedForm (props)  {
     const onSubmit = data => {
         data.owner = localStorage.getItem('userId');
         Create(data).then(result=>{
-            console.log(result)
+            if(data){
+                props.popUpState(false);
+            }
         })
     }
     const onCancel = ()=>{
@@ -59,7 +61,7 @@ export default function CreateSharedForm (props)  {
                         </div>
                     </div>
                     <div className="btn-login-footer">
-                        <button className="btn-footer btn-confirm-login-footer"> confrim</button>
+                        <button className="btn-footer btn-confirm-login-footer" onClick={() => onCancel()} > confrim</button>
                         <button type="button" className="btn-footer btn-cancel-login-footer" onClick={() => onCancel()}> cancel</button>
                     </div>
                 </form>

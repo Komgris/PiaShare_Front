@@ -13,6 +13,7 @@ export default function Register() {
         Login(data).then(result => {
             if(result){
                 localStorage.setItem('userId',result)
+                
                 history.push("/dashboard");
                 alertify.success("Success");
             }

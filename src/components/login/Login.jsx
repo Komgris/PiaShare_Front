@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState }from 'react';
 import '../../App.css';
 import {Register} from '../services/AuthServices'
 import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
 import { useHistory } from "react-router-dom";
+import Dialog from '@material-ui/core/Dialog';
+import CreateNickName from './CreateNickName'
 
 export default function Login() {
 
-    const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         if(data.confirm_password === data.password){
             delete data.confirm_password;
             Register(data).then(result=>{
                 if(result){
-                    localStorage.setItem('userId', result);
-                    history.push("/dashboard");
+                    console.log(result)
+                    localStorage.setItem('userId', result);                 
+                    changeState(true);
                 }
             }).catch((error)=>{
                 console.log(error)
@@ -26,6 +28,12 @@ export default function Login() {
             alertify.error('Please check your password');
         }
     }
+
+    const [openCreate, setOpenCreate] = React.useState(false);
+
+    const changeState = (value) => {
+      setOpenCreate(value);
+    };
 
     return (//favicon
         <div class="login-panel">
@@ -59,6 +67,12 @@ export default function Login() {
                     <p className="link-login-footer"> sign in </p>
                 </div>
             </form>
+
+            
+            <Dialog open={openCreate} onClose={()=>changeState(true)} maxWidth={'sm'} fullWidth={true}  aria-labelledby="form-dialog-title">
+            <CreateNickName ></CreateNickName>
+          </Dialog>
+
         </div>
     )
 }

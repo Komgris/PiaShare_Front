@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import HeaderDashboard from './HeaderDashboard';
 import { Get } from '../services/SharedServices';
 
 const useStyles = makeStyles(theme => ({
@@ -23,7 +22,6 @@ export default function MainDashboard() {
 
     return (
         <div>
-            <HeaderDashboard></HeaderDashboard>
             <div className="margin-main-dashboard">
                 <div class="container">
                     <div class="row justify-content-start">

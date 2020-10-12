@@ -4,6 +4,7 @@ import Login from '../login/mainLogin';
 import Register from '../Register/mainRegister'
 import MainDashboard from '../Dashboard/MainDashboard' 
 import JoinShardRoom from '../Dashboard/JoinShardRoom';
+import HeaderDashboard from '../Dashboard/HeaderDashboard';
 import { HashRouter as Router, Route } from 'react-router-dom'
 
 export default class mainapp extends Component {
@@ -34,6 +35,7 @@ export default class mainapp extends Component {
                 <Router>
                     <Route exact path="/dashboard" render={props => (
                         <React.Fragment>
+                            <HeaderDashboard></HeaderDashboard>
                             <MainDashboard></MainDashboard>
                         </React.Fragment>
                     )} />
@@ -41,6 +43,7 @@ export default class mainapp extends Component {
                 <Router>
                     <Route exact path="/sharedroom" render={props => (
                         <React.Fragment>
+                            <HeaderDashboard></HeaderDashboard>
                             <JoinShardRoom></JoinShardRoom>
                         </React.Fragment>
                     )} />

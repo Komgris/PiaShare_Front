@@ -22,12 +22,16 @@ export default function HeaderDashboard() {
       history.push("/sharedroom");
     }
 
+    const backtoMain =()=>{
+      history.push("/dashboard");
+    }
+
     return (
         <div class="header-flex-grow">
           <AppBar class="navbar-background" position="static">
             <Toolbar>
               <Typography variant="h6" class="header-flex-grow">
-              <img src={logo} class="header-logo" alt="logo" ></img>
+              <img onClick={()=>backtoMain()}  src={logo} class="header-logo pointer" alt="logo" ></img>
               </Typography>
               <button  class="header-login-btn header-font-size" onClick={()=>toJoinShareRoom()} >เข้าร่วมวงแชร์</button>
               <p class="header-label header-font-size" >or</p>

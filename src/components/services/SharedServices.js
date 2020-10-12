@@ -17,3 +17,8 @@ import Constants from '../Constrant/Constrant'
         const result = await axios.get(baseURL+'shared/find/'+ keyword).then(res=>res.data);
         return result;
     }
+
+    export const RequestRoom = async (model) =>{
+        const result = await axios.post(baseURL+'shared/requestRoom/',model).then(res=>res.data);
+        return result;
+    }

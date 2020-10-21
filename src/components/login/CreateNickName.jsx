@@ -1,14 +1,16 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { useForm } from "react-hook-form";
 import {Create} from '../services/ProfileServices'
 import { useHistory } from "react-router-dom";
+import {GlobalContext} from '../Context/GlobalState';
 
 export default function CreateNickName () {
 
+    const { transactions } = useContext(GlobalContext);
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        data.systemId = localStorage.getItem('userId');
+        data.systemId = transactions._id;
         Create(data).then(result=>{
             if(result){
                 history.push("/dashboard");

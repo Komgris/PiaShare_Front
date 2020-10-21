@@ -9,13 +9,14 @@ import CreateSharedForm from './CreateSharedForm';
 import { useHistory } from "react-router-dom";
 
 
-export default function HeaderDashboard() {
+export default function HeaderDashboard(props) {
 
     const history = useHistory();
     const [openCreate, setOpenCreate] = React.useState(false);
 
     const changeState = (value) => {
       setOpenCreate(value);
+      props.reRenderMain();
     };
 
     const toJoinShareRoom =()=>{
@@ -27,15 +28,15 @@ export default function HeaderDashboard() {
     }
 
     return (
-        <div class="header-flex-grow">
+        <div className="header-flex-grow">
           <AppBar class="navbar-background" position="static">
             <Toolbar>
               <Typography variant="h6" class="header-flex-grow">
-              <img onClick={()=>backtoMain()}  src={logo} class="header-logo pointer" alt="logo" ></img>
+              <img onClick={()=>backtoMain()}  src={logo} className="header-logo pointer" alt="logo" ></img>
               </Typography>
-              <button  class="header-login-btn header-font-size" onClick={()=>toJoinShareRoom()} >เข้าร่วมวงแชร์</button>
-              <p class="header-label header-font-size" >or</p>
-              <button  class="header-login-btn header-font-size" onClick={()=>changeState(true)} >สร้างวงแชร์</button>
+              <button  className="header-login-btn header-font-size" onClick={()=>toJoinShareRoom()} >เข้าร่วมวงแชร์</button>
+              <p className="header-label header-font-size" >or</p>
+              <button  className="header-login-btn header-font-size" onClick={()=>changeState(true)} >สร้างวงแชร์</button>
             </Toolbar>
           </AppBar>
 

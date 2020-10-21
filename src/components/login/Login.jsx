@@ -1,22 +1,26 @@
-import React, { useState }from 'react';
+import React, { useContext }from 'react';
 import '../../App.css';
 import {Register} from '../services/AuthServices'
 import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
-import { useHistory } from "react-router-dom";
 import Dialog from '@material-ui/core/Dialog';
 import CreateNickName from './CreateNickName'
+import {GlobalContext} from '../Context/GlobalState'
 
 export default function Login() {
 
+    const { updateCurrentUser } = useContext(GlobalContext);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         if(data.confirm_password === data.password){
             delete data.confirm_password;
             Register(data).then(result=>{
                 if(result){
-                    console.log(result)
-                    localStorage.setItem('userId', result);                 
+                    localStorage.setItem('userId', result); 
+                    const currentId={
+                        _id: result
+                    }
+                    updateCurrentUser(currentId);                
                     changeState(true);
                 }
             }).catch((error)=>{
@@ -36,7 +40,7 @@ export default function Login() {
     };
 
     return (//favicon
-        <div class="login-panel">
+        <div className="login-panel">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="header-login-container">Register</h2>
                 <div className="login-container">

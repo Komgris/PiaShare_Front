@@ -1,14 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {RequestRoom} from '../services/SharedServices'
+import {GlobalContext} from '../Context/GlobalState';
+
 
 export default function ListJoinSharedRoom(props) {
-    
+    const { transactions } = useContext(GlobalContext);
     const [buttonState, setbuttonState] = React.useState('JOIN');
-
 
     const toJoinShareRoom = (id) =>{
         let model = {
-            userId: localStorage.getItem('userId'),
+            userId: transactions._id,
             roomId: id,
             isAccept: false
         }

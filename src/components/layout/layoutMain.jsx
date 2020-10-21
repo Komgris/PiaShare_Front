@@ -12,6 +12,9 @@ class layoutMain extends Component {
         if(data === 'login'){
             this.props.history.push('/register'); 
         }
+        else if(data === 'resume'){
+            this.props.history.push('/porfolio-komgris'); 
+        }
         else{
             this.props.history.push('/login'); 
         }        
@@ -21,7 +24,7 @@ class layoutMain extends Component {
             <div>
                     <Header clickTrigger={this.changePage.bind(this)}></Header>
                     <Landing></Landing>
-                    <Content></Content>
+                    <Content clickTrigger={this.changePage.bind(this)}></Content>
             </div>
         )
     }

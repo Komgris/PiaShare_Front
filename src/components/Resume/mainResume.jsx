@@ -36,7 +36,7 @@ export default function MainResume() {
                         <center>
                             <h1 className="resume-name">Komgris Ratanacoop</h1>
                             <p className="paragraph-resume">I’m Junior Web Developer that interest in React <FaReact /> and Node.js <FaNodeJs /><br />
-                I have experience in Angular, .net framework for 1 year</p>
+                I have experience in Angular, .net framework for 1 year </p>
                             <p className="paragraph-resume topic">My Bio below</p>
                             <button onClick={() => scrollToBottom('bio')} className="content-btn-choice">Komgris Ratanacoop Bio</button>
                             <p className="paragraph-resume topic"> or you can see my project below </p>

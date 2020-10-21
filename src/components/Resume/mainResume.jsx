@@ -28,7 +28,7 @@ export default function MainResume() {
     }
 
     return (
-        <div className="back-ground-resume">
+        <div className="back-ground-resume" >
             <div className="row justify-content-center resume-content">
                 <div className="d-flex flex-column">
                     <div>

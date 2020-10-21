@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useForm } from "react-hook-form";
-import {Create} from '../services/SharedServices'
-
+import {Create} from '../services/SharedServices';
+import {GlobalContext} from '../Context/GlobalState';
 
 export default function CreateSharedForm (props)  {
 
+    const { transactions } = useContext(GlobalContext);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        data.owner = localStorage.getItem('userId');
+        data.member = [
+            {
+                userId:transactions._id,
+                name:transactions.name
+            }
+        ];
+        data.owner = transactions._id
+        console.log(data)
         Create(data).then(result=>{
-            console.log(result)
+            if(data){
+                props.popUpState(false);
+            }
         })
     }
     const onCancel = ()=>{
@@ -38,8 +48,8 @@ export default function CreateSharedForm (props)  {
                             <div className="col-sm-6"><label className="label-register-container">จำนวนสมาชิก :</label></div>
                             <div className="col-sm-6"><label className="label-register-container">รอบการเปีย :</label></div>
                             <div className="col-sm-6">
-                                <input name="member" type="number" className="input-register-container" ref={register({ required: true })}></input>
-                                {errors.member && <span className="red-label">This field is required</span>}
+                                <input name="maxmember" type="number" className="input-register-container" ref={register({ required: true })}></input>
+                                {errors.maxmember && <span className="red-label">This field is required</span>}
                             </div>
                             <div className="col-sm-6">
                                 <input name="peroid" type="text" className="input-register-container" ref={register({ required: true })}></input>
@@ -59,7 +69,7 @@ export default function CreateSharedForm (props)  {
                         </div>
                     </div>
                     <div className="btn-login-footer">
-                        <button className="btn-footer btn-confirm-login-footer"> confrim</button>
+                        <button type="submit"  className="btn-footer btn-confirm-login-footer"> confrim</button>
                         <button type="button" className="btn-footer btn-cancel-login-footer" onClick={() => onCancel()}> cancel</button>
                     </div>
                 </form>

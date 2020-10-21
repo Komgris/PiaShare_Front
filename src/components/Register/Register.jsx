@@ -1,24 +1,38 @@
-import React from 'react';
+import React,  { useContext } from 'react';
+import {Get} from '../services/ProfileServices'
 import { useForm } from "react-hook-form";
 import {Login} from '../services/AuthServices'
 import alertify from "alertifyjs";
 import { useHistory } from "react-router-dom";
+import {GlobalContext} from '../Context/GlobalState'
 import '../../App.css';
 
 export default function Register() {
 
+    const { updateCurrentUser } = useContext(GlobalContext);
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => {
-        Login(data).then(result => {
+    const onSubmit = async data => {
+        let token='';
+        await Login(data).then(result => {
             if(result){
-                localStorage.setItem('userId',result)
-                history.push("/dashboard");
-                alertify.success("Success");
+                localStorage.setItem('userId',result);
+                token = result;
             }
         }).catch((error) => {
             console.log(error)
             alertify.error(error.message);
+        })
+        await Get(token).then(result=>{
+            if(result){
+                const currentId={
+                    _id: token,
+                    name:result.name
+                };
+                updateCurrentUser(currentId);   
+                history.push("/dashboard");
+                alertify.success("Success");   
+            }
         })
     }
 

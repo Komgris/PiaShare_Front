@@ -1,12 +1,11 @@
-
-body{
-    font-family: 'Kanit', sans-serif;
-}
+html {
+    scroll-behavior: smooth;
+   }
 .background-img-main{
     background-color: #75D6EB;
     background-image: url(./img/background-main.png);
     background-repeat: no-repeat;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
 }
 .logo-size{
@@ -363,7 +362,7 @@ body{
     font-size: 1.1rem;
 }
 .margin-right{
-    margin-right: 10px;
+    margin: 10px 10px 10px 10px;
 }
 .create-form-panel{
     width: 100%;
@@ -386,6 +385,7 @@ body{
 }
 .border-share{
     border: 1px solid #F09E00;
+
 }
 .decision-content{
     margin: 20px 20px 20px 20px;
@@ -426,6 +426,147 @@ body{
     padding-top: 80px;
     padding-bottom: 80px;
 }
-
+.top-panel-join{
+    width: 100%;
+    height: 4rem;
+    padding-top: 10px;
+    padding-bottom: 5px;
+   
+    font-size: 30px;
+    color: black;
+}
+.border-join{
+    border:2px solid #F09E00;
+    padding: 20px 20px 20px 20px;
+}
+.content-join{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.search-input-join{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+.search-btn-join{
+    font-size:1.5rem;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #FDFEFE;
+    background-color: #F09E00;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.search-btn-join:hover{
+    opacity: 0.6;
+}
+.list-join-room{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #fcd280;
+    margin-bottom: 20px;
+}
+.pointer{
+    cursor: pointer;
+}
+.profile-panel-background{
+    background-color: #FCBC40;
+    color: black;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.img-template{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    border: 2px solid gray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.resume-content{
+    margin-top: 30px;
+}
+.resume-name{
+    font-weight: 100;
+    font-size: 3rem;
+    text-align: center;
+}
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.paragraph-resume{
+    font-size: 1.5rem;
+}
+.topic{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.content-btn-choice-width{
+    font-size: 30px;
+    background-color: #FDFEFE;
+    color: black;
+    border: 3px solid #F09E00;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: 100;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.content-btn-choice-width:hover{
+    background-color: #F09E00;
+    background: linear-gradient(to right, #F09E00 0%, #F09E00 50%,white 100%);
+    color: black;
+}
+.bio-card-panel{
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    max-width: 60rem;
+    text-align: center;
+    margin-top: 10px;
+}
+.topic-panel{
+    margin-top: 20px;
+    border: none;
+    color:  white;
+    background: linear-gradient(to right, #2d65ff 0%, #a09e9f 100%);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 15px 15px 15px 15px;
+    font-weight: bold;
+}
+.font-p-weight{
+    font-weight: 100;
+    font-size: 4rem;
+}
+.backgroud-resume-1{
+    background-color: burlywood;
+    width: 100vh;
+    height: 100vh;
+}
+.backgroud-resume-2{
+    background-color: yellowgreen;
+    width: 100vh;
+    height: 100vh;
+}
+.back-ground-resume{
+    /* background: linear-gradient(to right, #ffffff 0%, #faf2e3 50%,#F09E00 100%); */
+}
+.main-panel-resume{
+    margin-top: 50px;
+}
 
 

@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useContext }from 'react';
 import '../../App.css';
 import {Register} from '../services/AuthServices'
 import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
-import { useHistory } from "react-router-dom";
+import Dialog from '@material-ui/core/Dialog';
+import CreateNickName from './CreateNickName'
+import {GlobalContext} from '../Context/GlobalState'
 
 export default function Login() {
 
-    const history = useHistory();
+    const { updateCurrentUser } = useContext(GlobalContext);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         if(data.confirm_password === data.password){
             delete data.confirm_password;
             Register(data).then(result=>{
                 if(result){
-                    localStorage.setItem('userId', result);
-                    history.push("/dashboard");
+                    localStorage.setItem('userId', result); 
+                    const currentId={
+                        _id: result
+                    }
+                    updateCurrentUser(currentId);                
+                    changeState(true);
                 }
             }).catch((error)=>{
                 console.log(error)
@@ -27,8 +33,14 @@ export default function Login() {
         }
     }
 
+    const [openCreate, setOpenCreate] = React.useState(false);
+
+    const changeState = (value) => {
+      setOpenCreate(value);
+    };
+
     return (//favicon
-        <div class="login-panel">
+        <div className="login-panel">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="header-login-container">Register</h2>
                 <div className="login-container">
@@ -59,6 +71,12 @@ export default function Login() {
                     <p className="link-login-footer"> sign in </p>
                 </div>
             </form>
+
+            
+            <Dialog open={openCreate} onClose={()=>changeState(true)} maxWidth={'sm'} fullWidth={true}  aria-labelledby="form-dialog-title">
+            <CreateNickName ></CreateNickName>
+          </Dialog>
+
         </div>
     )
 }

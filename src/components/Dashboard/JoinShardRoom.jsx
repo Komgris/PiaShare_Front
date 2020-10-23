@@ -21,16 +21,20 @@ export default function JoinShardRoom() {
     return (
         <div >
             <div className="row justify-content-center" >
-                <div className="col-sm-12">
-                    <div className="content-join">
+                <div className="container">
+                    <div className="col-sm-12">
                         <label className="top-panel-join"><h1>Join Shared Room</h1></label>
                         <div className="border-join">
                             <label className="top-panel-join"><h2>ค้นหาวงแชร์</h2></label>
                             <form onSubmit={()=>onSearch()}>
-                            <div className="main-register">                              
-                                    <input className="search-input-join" value={keyword} onChange={e => setKeyword(e.target.value)} type="text"></input>
-                                    <button className="search-btn-join"  > Search </button>                              
-                            </div>
+                                <div className="row">
+                                    <div className="col-sm-9">
+                                        <input className="search-input-join" value={keyword} onChange={e => setKeyword(e.target.value)} type="text"></input>
+                                    </div>
+                                    <div className="col-sm-2">
+                                        <button className="search-btn-join"  > Search </button>
+                                    </div>
+                                </div>
                             </form>
                                 <div className="row">
                                     <div className="col-sm-12">

@@ -39,16 +39,15 @@ export default function MainDashboard() {
         <div>
              <HeaderDashboard reRenderMain={()=>getShareRoom()}></HeaderDashboard>
             <div className="row flex-row-reverse">
-                <div className="col-sm-3">
+                <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                     <ProfilePanel></ProfilePanel>
                 </div>
             </div>
             <div className="margin-main-dashboard">
-                <div className="container">
                     <div className="row flex-row">
                         {
                             shareRoom.map(x =>
-                                <div className="col-md-2.5" key={x._id}  >
+                                <div className="col-lg-3 col-md-4 col-sm-12 col-12" key={x._id}  >
                                     <div className="margin-right">
                                         <div className="card border-share">
                                             <div class="card-header" className={classes.cardHeader}>
@@ -70,7 +69,6 @@ export default function MainDashboard() {
                         }
                     </div>
                 </div>
-            </div>
         </div>
     )
 }

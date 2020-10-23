@@ -32,7 +32,7 @@ export default function MainResume() {
             <div className="container">
             <div className="row justify-content-center resume-content">
                 <div >
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 col-12">
                         <div><img className="img-template" src={image}></img></div>
                         <center>
                             <h1 className="resume-name">Komgris Ratanacoop</h1>
@@ -46,7 +46,7 @@ export default function MainResume() {
                             <div className="row col-sm-10"><button href="#down" className="content-btn-choice-width">Management System using Angular and .Net Core<FaAngular /></button></div>
                         </center>
                     </div>
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 col-12">
                         <h1 ref={bioRef} className="main-panel-resume font-p-weight">Bio</h1>
                         <div className="bio-card-panel ">
                             <p className="paragraph-resume">My name is Komgris Ratanacoop <br />
@@ -72,7 +72,7 @@ export default function MainResume() {
                             </p>
                         </div>
                     </div>
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 col-12">
                         <h1 className="main-panel-resume font-p-weight">Project</h1>
                         <div className="bio-card-panel ">
                             <h1 ref={piaRef} className="paragraph-resume topic">Piashare</h1>
@@ -94,7 +94,7 @@ export default function MainResume() {
                         </div>
                     </div>
 
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 col-12">
                         <div className="bio-card-panel ">
                             <h1 ref={dashRef}  className="paragraph-resume topic">Dashboard Demo
                             </h1>

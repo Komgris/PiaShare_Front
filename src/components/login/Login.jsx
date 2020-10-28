@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
 import Dialog from '@material-ui/core/Dialog';
 import CreateNickName from './CreateNickName'
-import {GlobalContext} from '../Context/GlobalState'
+import {GlobalContext} from '../Context/GlobalState';
+import Constants from '../Constrant/Constrant';
 
 export default function Login() {
 
@@ -16,7 +17,7 @@ export default function Login() {
             delete data.confirm_password;
             Register(data).then(result=>{
                 if(result){
-                    localStorage.setItem('userId', result); 
+                    localStorage.setItem(Constants.USERKEY_LOCAL, result); 
                     const currentId={
                         _id: result
                     }

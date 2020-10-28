@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Constants from '../Constrant/Constrant'
+import Constants from '../Constrant/Constrant';
 
     const baseURL = Constants.HOST;
     const testURL = Constants.HOST_TEST;
@@ -18,3 +18,5 @@ import Constants from '../Constrant/Constrant'
         const result = await axios.get(testURL).then(res=>res.data);
         return result
     }
+
+

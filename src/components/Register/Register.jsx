@@ -6,6 +6,7 @@ import alertify from "alertifyjs";
 import { useHistory } from "react-router-dom";
 import {GlobalContext} from '../Context/GlobalState'
 import '../../App.css';
+import Constants from '../Constrant/Constrant';
 
 export default function Register() {
 
@@ -16,7 +17,7 @@ export default function Register() {
         let token='';
         await Login(data).then(result => {
             if(result){
-                localStorage.setItem('userId',result);
+                localStorage.setItem(Constants.USERKEY_LOCAL,result);
                 token = result;
             }
         }).catch((error) => {

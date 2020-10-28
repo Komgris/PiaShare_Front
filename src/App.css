@@ -571,5 +571,33 @@ html {
 .main-panel-resume{
     margin-top: 50px;
 }
+.search-btn-pending{
+    font-size:1.5rem;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #FDFEFE;
+    background-color:#2d65ff;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.search-btn-pending:hover{
+    opacity: 0.6;
+}
 
+.search-btn-joined{
+    font-size:1.5rem;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #000000;
+    background-color:#ffffff;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.search-btn-pending:hover{
+    opacity: 0.6;
+}
 

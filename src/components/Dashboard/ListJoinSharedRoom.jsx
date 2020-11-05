@@ -29,7 +29,7 @@ export default function ListJoinSharedRoom(props) {
                         props.roomList.remark === 'Join' ? 'search-btn-join' : ''].join(' ')}  onClick={()=>toJoinShareRoom(props.roomList._id)} > {props.roomList.remark} </button>
                     </div>
                     <h3>{props.roomList.name}</h3>
-                        เจ้าของ :{props.roomList.owner}<br/>
+                        เจ้าของ :{props.roomList.ownerName}<br/>
                     </div>
     )
 }

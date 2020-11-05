@@ -3,10 +3,11 @@ html {
    }
 .background-img-main{
     background-color: #75D6EB;
-    background-image: url(./img/background-main.png);
     background-repeat: no-repeat;
-    max-width: 100%;
-    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./img/background-main.png);
 }
 .logo-size{
     width: 1.5em;
@@ -599,5 +600,13 @@ html {
 }
 .search-btn-pending:hover{
     opacity: 0.6;
+}
+.room-border{
+    border: 2px solid  #F09E00;
+    padding: 10px 10px 10px 10px;
+}
+.badge-room{
+    background-color:  #F09E00;
+    
 }
 

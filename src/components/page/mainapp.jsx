@@ -9,6 +9,7 @@ import MainResume from '../Resume/mainResume';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import {GlobalContext} from '../Context/GlobalState';
 import Constants from '../Constrant/Constrant';
+import MainRoom from '../Room/MainRoom';
 
 export default function Mainapp() {
     const { updateCurrentUser,transactions } = useContext(GlobalContext);
@@ -58,7 +59,7 @@ export default function Mainapp() {
             <Router>
                 <Route exact path="/dashboard" render={props => (
                     <React.Fragment>                          
-                        <MainDashboard></MainDashboard>
+                        <MainRoom></MainRoom>
                     </React.Fragment>
                 )} />
             </Router>

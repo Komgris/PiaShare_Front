@@ -25,7 +25,8 @@ export default function Register() {
             alertify.error(error.message);
         })
         await Get(token).then(result=>{
-            if(result){
+            console.log(result);
+            if(result){             
                 const currentId={
                     _id: token,
                     name:result.name

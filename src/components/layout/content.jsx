@@ -13,10 +13,10 @@ export default function content(props) {
             <p className="content-paragrah"> What are you looking for ? </p>
             <div className="container">
                 <div className="row ">
-                    <div className="col-md-6 col-lg-8 col-sm-12 ">
+                    <div className="col-md-6 col-lg-6 col-sm-12 ">
                         <button className="content-btn-choice">PIA<a className="label-bold">SHARE</a> <img src={logo} className="logo-size" ></img> </button>
                     </div>
-                    <div className="col-md-6 col-lg-4 col-sm-12">
+                    <div className="col-md-6 col-lg-6 col-sm-12">
                             <button onClick={() => gotoPortfolio()} className="content-btn-choice">R.Komgris 's <a className="label-bold">Resume</a> <EmojiPeopleIcon style={{ fontSize: '45px' }}></EmojiPeopleIcon></button>
                     </div>
                 </div>

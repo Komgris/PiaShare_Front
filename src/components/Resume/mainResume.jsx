@@ -43,7 +43,6 @@ export default function MainResume() {
                             <p className="paragraph-resume topic"> or you can see my project below </p>
                             <div className="row col-sm-10"><button onClick={() => scrollToBottom('pia')} className="content-btn-choice-width">PiaShare using React and Express js<FaReact /><FaNodeJs /></button></div>
                             <div className="row col-sm-10"><button onClick={() => scrollToBottom('dash')} className="content-btn-choice-width">Dashboard Demo using Angular<FaAngular /></button></div>
-                            <div className="row col-sm-10"><button href="#down" className="content-btn-choice-width">Management System using Angular and .Net Core<FaAngular /></button></div>
                         </center>
                     </div>
                     <div className="col-12">
@@ -89,7 +88,8 @@ export default function MainResume() {
                             <p className="paragraph-resume topic"><FaGithub />Github</p>
                             <p className="paragraph-resume">
                                 Frontend : <a href="https://github.com/Komgris/PiaShare_Front" target="_blank" rel="noopener noreferrer">github.com/Komgris/PiaShare_Front</a> <br />
-                            Backend : <a href="https://github.com/Komgris/PiaShare_API" target="_blank" rel="noopener noreferrer">github.com/Komgris/PiaShare_API</a> <br />
+                                Backend : <a href="https://github.com/Komgris/PiaShare_API" target="_blank" rel="noopener noreferrer">github.com/Komgris/PiaShare_API</a> <br />
+                                Deploy with AWS ec2 (not implement backend yet) : <a href="http://18.220.5.2/" target="_blank" rel="noopener noreferrer">AWS EC2</a> <br />
                             </p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ export default function MainResume() {
                             <h1 ref={dashRef}  className="paragraph-resume topic">Dashboard Demo
                             </h1>
                             <p className="paragraph-resume">
-                                Dashboard Demo that i create with mock data <br />
+                                Dashboard Demo that i create with mock data and free api<br />
                                 this dashboard show graph chart and some component that i used to do.
                             </p>
                             <p className="paragraph-resume topic">Tech Stack</p>
@@ -108,7 +108,8 @@ export default function MainResume() {
                             </p>
                             <p className="paragraph-resume topic"><FaGithub />Github</p>
                             <p className="paragraph-resume">
-                                Frontend : <a href="https://github.com/Komgris/PiaShare_Front" target="_blank" rel="noopener noreferrer">github.com/Komgris/PiaShare_Front</a> <br />
+                                Frontend : <a href="https://github.com/Komgris/Dashboard_Portfolio" target="_blank" rel="noopener noreferrer">github.com/Komgris/Dashboard_Portfolio</a> <br />
+                                Deploy with AWS Amplify : <a href="https://master.d390sdzyiuezyw.amplifyapp.com/" target="_blank" rel="noopener noreferrer">Dashboard Portfolio</a> <br />
                             </p>
                         </div>
                     </div>

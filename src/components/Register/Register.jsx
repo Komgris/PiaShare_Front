@@ -38,6 +38,10 @@ export default function Register() {
         })
     }
 
+    const handleClickRegister =()=>{
+        history.push("/register");
+    }
+
     return (
         <div class="register-panel">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -56,14 +60,13 @@ export default function Register() {
             {/* ***************************************************************************************************************** */}
             <div className="btn-register-footer">
                 <button className="btn-footer btn-confirm-register-footer"> confrim</button>
-                <button className="btn-footer btn-cancel-register-footer"> cancel</button>
             </div>
+            </form>
             {/* ***************************************************************************************************************** */}
             <div className="text-footer">
                 <p className="text-register-footer" >Don’t have any account ? </p>
-                <p className="link-register-footer"> sign up </p>
+                <p onClick={handleClickRegister} className="link-register-footer"> sign up </p>
             </div>
-            </form>
         </div>
     );
 }

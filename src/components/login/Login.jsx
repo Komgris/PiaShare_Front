@@ -6,9 +6,10 @@ import alertify from "alertifyjs";
 import Dialog from '@material-ui/core/Dialog';
 import CreateNickName from './CreateNickName'
 import {GlobalContext} from '../Context/GlobalState';
+import Constants from '../Constrant/Constrant';
 import { useHistory } from "react-router-dom";
 
-export default function Login(props) {
+export default function Login() {
     const history = useHistory();
     const { updateCurrentUser } = useContext(GlobalContext);
     const { register, handleSubmit, errors } = useForm();
@@ -17,7 +18,7 @@ export default function Login(props) {
             delete data.confirm_password;
             Register(data).then(result=>{
                 if(result){
-                    localStorage.setItem('userId', result); 
+                    localStorage.setItem(Constants.USERKEY_LOCAL, result); 
                     const currentId={
                         _id: result
                     }

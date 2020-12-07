@@ -5,6 +5,7 @@ import ProfilePanel from './ProfilePanel';
 import HeaderDashboard from './HeaderDashboard';
 import {GlobalContext} from '../Context/GlobalState';
 import alertify from "alertifyjs";
+import Constants from '../Constrant/Constrant';
 
 const useStyles = makeStyles(theme => ({
     cardHeader: {
@@ -21,13 +22,14 @@ export default function MainDashboard() {
     const classes = useStyles();
 
     const getShareRoom=()=>{
-        let userId= transactions._id
-        Get(userId).then(result=>{
-            setshareRoom(result);
-        }).catch((error)=>{
-            console.log(error)
-            alertify.error(error.message);
-        });
+        let userId= transactions._id ? transactions._id : localStorage.getItem(Constants.USERKEY_LOCAL)
+            Get(userId).then(result=>{
+                setshareRoom(result);
+            }).catch((error)=>{
+                console.log(error)
+                alertify.error(error.message);
+            });
+        
     }
     useEffect(() => {
         getShareRoom(); 
@@ -47,7 +49,7 @@ export default function MainDashboard() {
                     <div className="row flex-row">
                         {
                             shareRoom.map(x =>
-                                <div className="col-lg-3 col-md-4 col-sm-12 col-12" key={x._id}  >
+                                <div className="col-lg-3 col-md-4 col-sm-12 col-12"  >
                                     <div className="margin-right">
                                         <div className="card border-share">
                                             <div class="card-header" className={classes.cardHeader}>

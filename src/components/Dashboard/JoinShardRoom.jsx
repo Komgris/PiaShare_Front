@@ -1,17 +1,19 @@
-import React,{ useState }  from 'react'
-import {Find, RequestRoom} from '../services/SharedServices'
+import React,{ useState,useContext }  from 'react'
+import {Find} from '../services/SharedServices'
 import ListJoinSharedRoom from '../Dashboard/ListJoinSharedRoom';
+import {GlobalContext} from '../Context/GlobalState';
+
 
 export default function JoinShardRoom() {
-
+    const { transactions } = useContext(GlobalContext); 
     const [keyword, setKeyword] = useState("");
     const [sharedList, setsharedList] = useState([]);
     const [countList, setcountList] = useState(0);
-    const onSearch = () =>{
-        Find(keyword).then(result=>{
-            if(result){
-                console.log('searchList',result);
+    const onSearch = async () =>{
+            await Find(keyword,transactions._id).then(result=>{
+            if(result){           
                 setsharedList(result);
+                console.log('searchList',result);
                 setcountList(result.length);
             }
         })
@@ -40,10 +42,11 @@ export default function JoinShardRoom() {
                                     <div className="col-sm-12">
                                         <h5>ผลการค้นหา {countList} รายการ</h5>
                                         {
-                                            sharedList.map(x =>
-                                                <ListJoinSharedRoom roomList ={x} ></ListJoinSharedRoom>
-                                                // <div key ={x._id} className="list-join-room">
-                                                //     <div className="row justify-content-end"><button className="search-btn-join" onClick={()=>toJoinShareRoom(x._id)} > JOIN </button></div>
+
+                                            sharedList.map(x => 
+                                                <ListJoinSharedRoom key ={x._id} roomList ={x} ></ListJoinSharedRoom>
+                                                // <div  className="list-join-room">
+                                                //     <div className="row justify-content-end"><button className="search-btn-join"  > JOIN </button></div>
                                                 //     <h3>{x.name}</h3>
                                                 //     เจ้าของ :{x.owner}<br/>
                                                 //     สมาชิก : {x.member}

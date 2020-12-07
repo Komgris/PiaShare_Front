@@ -21,9 +21,9 @@ import '../../App.css'
             <Typography variant="h6" class="header-flex-grow">
             <img src={logo} className="header-logo" ></img>
             </Typography>
-            <button onClick={handleClickLogin} className="header-login-btn header-font-size" >log in</button>
+            <button onClick={handleClickRegister} className="header-login-btn header-font-size" >log in</button>
             <a className="header-label header-font-size">or</a>
-            <button onClick={handleClickRegister} className="header-menu-btn header-font-size" >sign up</button>
+            <button onClick={handleClickLogin}  className="header-menu-btn header-font-size" >sign up</button>
           </Toolbar>
         </AppBar>
       </div>

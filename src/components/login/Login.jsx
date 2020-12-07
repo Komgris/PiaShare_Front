@@ -5,10 +5,11 @@ import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
 import Dialog from '@material-ui/core/Dialog';
 import CreateNickName from './CreateNickName'
-import {GlobalContext} from '../Context/GlobalState'
+import {GlobalContext} from '../Context/GlobalState';
+import { useHistory } from "react-router-dom";
 
-export default function Login() {
-
+export default function Login(props) {
+    const history = useHistory();
     const { updateCurrentUser } = useContext(GlobalContext);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
@@ -39,6 +40,10 @@ export default function Login() {
       setOpenCreate(value);
     };
 
+    const handleClickLogin =()=>{
+        history.push("/login");
+    }
+
     return (//favicon
         <div className="login-panel">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,17 +65,17 @@ export default function Login() {
                     <input type="password" name="confirm_password"  className="input-login-container" ref={register({ required: true })}></input>
                     {errors.confirm_password && <span className="red-label">This field is required</span>}
                 </div>
+               
                 {/* ***************************************************************************************************************** */}
                 <div className="btn-login-footer">
                     <button className="btn-footer btn-confirm-login-footer"> confrim</button>
-                    <button className="btn-footer btn-cancel-login-footer"> cancel</button>
-
                 </div>
+                </form>
                 <div className="text-footer">
                     <p className="text-login-footer" >already have an account ? </p>
-                    <p className="link-login-footer"> sign in </p>
+                    <p  onClick={handleClickLogin}  className="link-login-footer"> sign in </p>
                 </div>
-            </form>
+            
 
             
             <Dialog open={openCreate} onClose={()=>changeState(true)} maxWidth={'sm'} fullWidth={true}  aria-labelledby="form-dialog-title">

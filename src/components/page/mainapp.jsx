@@ -22,14 +22,14 @@ export default class mainapp extends Component {
                 <Router>
                     <Route exact path="/login" render={props => (
                         <React.Fragment>
-                            <Login></Login>
+                             <Register></Register>
                         </React.Fragment>
                     )} />
                 </Router>
                 <Router>
                     <Route exact path="/register" render={props => (
                         <React.Fragment>
-                            <Register></Register>
+                            <Login></Login>                   
                         </React.Fragment>
                     )} />
                 </Router>
